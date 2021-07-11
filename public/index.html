@@ -18,18 +18,7 @@
             -ms-transform: translate(-50%, -50%);*/
         }
         
-        .container {
-            width: 20em;
-            height: 10em;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            background-color: gray;
-            border-radius: 2em;
-        }
+        .container {}
         
         .overview div {
             display: flex;
@@ -41,17 +30,15 @@
 
 <body>
     <div class="container">
-        <div class="overview">
-            <div class=username>
-                <label>username:</label>
-                <input type="text" id="username" placeholder="username">
-            </div>
-            <div class=room>
-                <label>room:</label>
-                <input type="text" id="room" placeholder="room">
-            </div>
-            <div><button id="submit">go to room</button></div>
+        <div class=username>
+            <label>username:</label>
+            <input type="text" id="username" placeholder="username">
         </div>
+        <div class=room>
+            <label>room:</label>
+            <input type="text" id="room" placeholder="room">
+        </div>
+        <div><button id="submit">go to room</button></div>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
