@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .overview {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+        
+        .container {
+            width: 20em;
+            height: 10em;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: gray;
+            border-radius: 2em;
+        }
+        
+        .overview div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="overview">
+            <div class=username>
+                <label>username:</label>
+                <input type="text" id="username" placeholder="username">
+            </div>
+            <div class=room>
+                <label>room:</label>
+                <input type="text" id="room" placeholder="room">
+            </div>
+            <div><button id="submit">go to room</button></div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const submit = document.getElementById("submit");
+    const username = document.getElementById("username");
+    const roomElement = document.getElementById("room");
+
+    username.value = localStorage.getItem("username");
+    roomElement.value = localStorage.getItem("room");
+
+
+    username.addEventListener("change", () => {
+        localStorage.setItem("username", username.value);
+    })
+    submit.addEventListener("click", (e) => {
+        location.replace('/chat.html?room=' + roomElement.value)
+    })
+</script>
+
+</html>

@@ -1,0 +1,7 @@
+.theme-container {
+    background-color: #fff;
+}
+
+.systemMessage {
+    background-color: hsl(64, 100%, 50%) !important;
+}
